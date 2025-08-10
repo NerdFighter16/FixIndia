@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<div class="form-container" style="max-width: 800px;">
+    <h2 class="text-center mb-4">Report a New Issue</h2>
+    <form id="report-form" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Issue Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Concerned Department</label>
+            <select class="form-select" id="category" name="category" required>
+                <option selected disabled value="">Choose Department...</option>
+                <option value="Roads & Infrastructure">Roads & Infrastructure</option>
+                <option value="Electricity Supply">Electricity Supply</option>
+                <option value="Water & Drainage">Water & Drainage</option>
+                <option value="Sanitation & Waste">Sanitation & Waste</option>
+                <option value="Other Civic Issues">Other Civic Issues</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Location (Click on the map to set)</label>
+            <div id="reportMap" style="height: 400px; width: 100%; border-radius: 8px;"></div>
+            <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
+        </div>
+        <div class="mb-3">
+            <label for="issueImage" class="form-label">Upload Image (Optional)</label>
+            <input class="form-control" type="file" id="issueImage" name="issueImage" accept="image/*">
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Submit Report</button>
+    </form>
+</div>
+<%- include('partials/footer') %>

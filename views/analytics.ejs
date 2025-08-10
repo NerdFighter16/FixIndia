@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Analytics Dashboard</h2>
+    <div class="row g-4">
+        <div class="col-md-12">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Average Resolution Time</h5>
+                    <p class="display-5 fw-bold" id="avg-time-display">Loading...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Issues per Department</h5>
+                    <canvas id="issuesPerDeptChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Status Breakdown</h5>
+                    <canvas id="statusBreakdownChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,123 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- NEW Color Palette & Modern Theme --- */
+:root {
+    --bg-light: #F8F9FA;         /* Off-white background */
+    --bg-card: #FFFFFF;          /* Pure white for cards */
+    --text-dark: #212529;        /* Dark, readable font color */
+    --text-muted: #6c757d;       /* Muted text for secondary info */
+    --accent-primary: #FF9933;   /* Saffron/Orange for primary actions */
+    --accent-secondary: #138808; /* Green for success/resolved status */
+    --border-color: #dee2e6;     /* Light gray for borders */
+    --font-sans-serif: 'Poppins', sans-serif; /* Modern, clean font */
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: var(--font-sans-serif);
+    font-weight: 400; /* Regular weight */
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--text-dark) !important;
+    font-weight: 600; /* Bolder font for navigation */
+}
+
+.nav-link:hover {
+    color: var(--accent-primary) !important;
+}
+
+/* --- Main Layout --- */
+.issue-list-container {
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-left: 1px solid var(--border-color);
+}
+
+/* --- Map Styles --- */
+#map, #reportMap {
+    height: 100vh;
+    width: 100%;
+}
+#reportMap {
+    height: 400px;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: var(--bg-card);
+    color: var(--text-dark);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+.leaflet-popup-content h6 {
+    color: var(--accent-primary);
+    font-weight: 700;
+}
+
+/* --- Issue Card & Dashboard --- */
+.issue-card, .form-container, .table {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.issue-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.2s ease-in-out;
+}
+.card-header {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+/* --- Status Badges --- */
+.status-badge {
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.4em 0.7em;
+    border-radius: 12px;
+}
+.status-Pending { background-color: #ffc107; color: var(--text-dark); }
+.status-In\.Progress { background-color: var(--accent-primary); color: white; }
+.status-Resolved { background-color: var(--accent-secondary); color: white; }
+
+/* --- Forms & Buttons --- */
+.btn-primary, .btn-primary:hover, .btn-primary:active {
+    background-color: var(--accent-primary) !important;
+    border-color: var(--accent-primary) !important;
+    font-weight: 600;
+    box-shadow: none !important;
+}
+.form-control, .form-select {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+}
+.form-control:focus, .form-select:focus {
+    background-color: var(--bg-card);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 0.2rem rgba(255, 153, 51, 0.25);
+}
+.form-control::placeholder {
+    color: var(--text-muted);
+    opacity: 1;
+}
+
+.form-container {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}

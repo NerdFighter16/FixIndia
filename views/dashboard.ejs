@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Official's Dashboard</h2>
+    <p>Manage the status of all reported issues.</p>
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover" id="dashboard-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Current Status</th>
+                    <th>Reported On</th>
+                    <th>Update Status</th>
+                </tr>
+            </thead>
+            <tbody id="dashboard-table-body">
+                </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

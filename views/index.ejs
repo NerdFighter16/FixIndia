@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+<div class="container mt-4">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">Welcome to BharatFix</h1>
+        <p class="lead text-muted">Select a department below to view and report issues in your area.</p>
+    </div>
+
+    <div class="row g-4">
+        <% 
+            const departments = [
+                { name: "Roads & Infrastructure", icon: "🛣️" },
+                { name: "Electricity Supply", icon: "💡" },
+                { name: "Water & Drainage", icon: "💧" },
+                { name: "Sanitation & Waste", icon: "🗑️" },
+                { name: "Other Civic Issues", icon: "📋" }
+            ];
+        %>
+
+        <% departments.forEach(dept => { %>
+            <div class="col-md-6 col-lg-4">
+                <a href="/department/<%= encodeURIComponent(dept.name) %>" class="department-card-link">
+                    <div class="card department-card h-100">
+                        <div class="card-body text-center">
+                            <div class="department-icon"><%= dept.icon %></div>
+                            <h5 class="card-title mt-3"><%= dept.name %></h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
