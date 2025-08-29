@@ -7,7 +7,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "aryan",
   "license": "ISC",
   "description": "",
   "dependencies": {

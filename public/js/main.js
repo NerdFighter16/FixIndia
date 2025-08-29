@@ -1,4 +1,4 @@
-// This script handles all frontend interactivity for the BharatFix app.
+// This script handles all frontend interactivity for the FixIndia app.
 
 // --- Global variables for maps and markers ---
 let map, reportMap;
