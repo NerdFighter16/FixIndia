@@ -7,7 +7,7 @@
     --bg-card: #FFFFFF;          /* Pure white for cards */
     --text-dark: #212529;        /* Dark, readable font color */
     --text-muted: #6c757d;       /* Muted text for secondary info */
-    --accent-primary: #FF9933;   /* Saffron/Orange for primary actions */
+    --accent-primary: #007bff;   /* Saffron/Orange for primary actions */
     --accent-secondary: #138808; /* Green for success/resolved status */
     --border-color: #dee2e6;     /* Light gray for borders */
     --font-sans-serif: 'Poppins', sans-serif; /* Modern, clean font */
@@ -18,6 +18,10 @@ body {
     color: var(--text-dark);
     font-family: var(--font-sans-serif);
     font-weight: 400; /* Regular weight */
+}
+
+.container {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* --- Navbar --- */

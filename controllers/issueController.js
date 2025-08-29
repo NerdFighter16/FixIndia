@@ -1,5 +1,11 @@
+
 const pool = require('../config/db');
 
+/**
+ * @desc    Create a new issue
+ * @route   POST /api/issues
+ * @access  Private
+ */
 exports.createIssue = async (req, res) => {
     const { title, description, category, latitude, longitude } = req.body;
     const reporter_id = req.session.user.id;
@@ -16,6 +22,11 @@ exports.createIssue = async (req, res) => {
     }
 };
 
+/**
+ * @desc    Get all issues with optional filtering
+ * @route   GET /api/issues
+ * @access  Public
+ */
 exports.getIssues = async (req, res) => {
     const { status, category, search } = req.query;
     let query = "SELECT i.*, u.name as reporter_name FROM issues i JOIN users u ON i.reporter_id = u.id";
@@ -50,6 +61,11 @@ exports.getIssues = async (req, res) => {
     }
 };
 
+/**
+ * @desc    Vote for an issue
+ * @route   POST /api/issues/:id/vote
+ * @access  Private
+ */
 exports.voteIssue = async (req, res) => {
     const issue_id = req.params.id;
     const user_id = req.session.user.id;
@@ -71,7 +87,11 @@ exports.voteIssue = async (req, res) => {
     }
 };
 
-// Add this new function to issueController.js
+/**
+ * @desc    Get analytics data for issues
+ * @route   GET /api/issues/analytics
+ * @access  Private (Official)
+ */
 exports.getAnalytics = async (req, res) => {
     try {
         // 1. Issues per department
@@ -111,6 +131,11 @@ exports.getAnalytics = async (req, res) => {
     }
 };
 
+/**
+ * @desc    Update the status of an issue
+ * @route   PUT /api/issues/:id/status
+ * @access  Private (Official)
+ */
 exports.updateStatus = async (req, res) => {
     const { id } = req.params;
     const { status } = req.body;

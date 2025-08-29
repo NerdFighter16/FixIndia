@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 
 const authRoutes = require('./routes/authRoutes');
 const issueRoutes = require('./routes/issueRoutes');
+const pool = require('./config/db');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -74,3 +75,5 @@ app.get('/analytics', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+module.exports = app;
